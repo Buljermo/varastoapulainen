@@ -1,0 +1,25 @@
+@import "../../assets/styles/_config.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $color-primary;
+  color: $color-neutral-lightest;
+  max-height: 4rem;
+  min-height: 4rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.smallLogo {
+  max-width: 100%;
+  height: auto;
+  max-height: 1rem;
+  min-height: 3rem;
+  margin-left: 20px;
+}
+
+.text {
+  flex: 1;
+  text-align: center;
+}
