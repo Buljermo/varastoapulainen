@@ -1,5 +1,5 @@
 import styles from './App.module.scss'
-import Item from '../Item'
+import Items from '../Items'
 import Header from '../Header/Header'
 import Menu from '../Menu'
 import Content from '../Content'
@@ -14,10 +14,7 @@ function App() {
         <div className={styles.app}>
           <Header />
           <Content>
-            <Item />
-            <Item />
-            <Item />
-            <Item />
+            <Items />
             <FloatingButton primary>+</FloatingButton>
           </Content>
           <Menu />
