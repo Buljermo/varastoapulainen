@@ -11,7 +11,15 @@
   align-items: center;
 }
 
-.menu > div {
+.menu>div {
   display: flex;
   align-items: center;
+}
+
+.menu a {
+  color: $color-primary;
+
+  &:global.active {
+    color: $color-primary-light;
+  }
 }
