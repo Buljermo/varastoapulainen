@@ -1,14 +1,14 @@
 import styles from './Item.module.scss'
 import { MdNavigateNext } from 'react-icons/md'
 
-function Item() {
+function Item({data, ...props}) {
 
     return (
         <div className={styles.item}>
             <div className={styles.item_data}>
-                <div className={styles.item_model}>Samsung RS27T5200SR</div>
-                <div className={styles.item_type}>Jääkaappi</div>
-                <div className={styles.item_note}>Tilava, mutta joskus kompressorin ääni voi olla voimakas.</div>
+                <div className={styles.item_model}>{data.model}</div>
+                <div className={styles.item_type}>{data.type}</div>
+                <div className={styles.item_note}>{data.note}</div>
             </div>
             <div className={styles.item_edit}>
                 <MdNavigateNext />
