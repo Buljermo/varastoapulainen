@@ -15,7 +15,7 @@ function ItemForm(props) {
 
     const initialState = {
         model: "",
-        tyoe: "",
+        type: "",
         note: ""
     }
 
