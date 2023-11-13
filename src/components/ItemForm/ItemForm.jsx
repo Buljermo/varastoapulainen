@@ -9,7 +9,7 @@ function ItemForm(props) {
     const submit = () => {
         let storedValues = Object.assign({}, values)
         storedValues.id = crypto.randomUUID()
-        props.onItemSubmit(values)
+        props.onItemSubmit(storedValues)
         navigate(-1)
     }
 
