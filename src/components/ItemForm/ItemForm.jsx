@@ -7,6 +7,8 @@ function ItemForm(props) {
     const navigate = useNavigate()
 
     const submit = () => {
+        let storedValues = Object.assign({}, values)
+        storedValues.id = crypto.randomUUID()
         props.onItemSubmit(values)
         navigate(-1)
     }
