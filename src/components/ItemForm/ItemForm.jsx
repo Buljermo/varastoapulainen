@@ -7,8 +7,8 @@ function ItemForm(props) {
     const navigate = useNavigate()
 
     const submit = () => {
-        console.log(values)
-        alert("SUBMIT")
+        props.onItemSubmit(values)
+        navigate(-1)
     }
 
     const initialState = {
