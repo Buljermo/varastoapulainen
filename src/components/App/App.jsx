@@ -8,7 +8,14 @@ function App() {
 
   const handleItemSubmit = (newitem) => {
     let copy = data.slice()
-    copy.push(newitem)
+
+    const index = copy.findIndex(item => item.id === newitem.id)
+    if (index >= 0) {
+      copy[index] = newitem
+    } else {
+      copy.push(newitem)
+    }
+
     copy.sort((a, b) => {
       const aType = a.type.toLowerCase();
       const bType = b.type.toLowerCase();
