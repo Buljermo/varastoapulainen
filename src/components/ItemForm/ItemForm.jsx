@@ -36,12 +36,11 @@ function ItemForm(props) {
                 <div className={styles.itemform_row}>
                     <div>
                         <label htmlFor='type'>Tuotetyyppi</label>
-                        <select name="type" onChange={handleChange} value={values.type}>
-                            <option>Jääkaappi</option>
-                            <option>Pakastin</option>
-                            <option>Uuni</option>
-                            <option>Pesukone</option>
-                            <option>Mikroaaltouuni</option>
+                        <select name='type' onChange={handleChange} value={values.type}>
+                            <option value="">(valitse)</option>
+                            {props.typelist.map(
+                                type => <option key={type}>{type}</option>
+                            )}
                         </select>
                     </div>
                 </div>
