@@ -1,5 +1,7 @@
 import styles from './Stats.module.scss'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { Cell } from 'recharts'
+import randomColor from 'randomcolor'
 
 function Stats(props) {
     const { data } = props;
@@ -15,6 +17,7 @@ function Stats(props) {
         määrä: Math.round(processedData[type]),
     }));
 
+    const colors = randomColor({ count: chartData.length, seed: 'siemenluku', luminosity: 'dark' });
 
     return (
         <div className={styles.stats}>
@@ -23,10 +26,14 @@ function Stats(props) {
             <ResponsiveContainer height={350}>
                 <BarChart data={chartData}>
                     <XAxis dataKey='type' />
-                    <YAxis type="number"  />
+                    <YAxis type="number" />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="määrä" fill="#8884d8" />
+                    <Bar dataKey="määrä">
+                        {chartData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={colors[index]} />
+                        ))}
+                    </Bar>
                 </BarChart>
             </ResponsiveContainer>
         </div>
