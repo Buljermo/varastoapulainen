@@ -1,12 +1,11 @@
 import AppRouter from '../AppRouter'
-import testdata from './testdata.js'
 import { useState } from 'react'
+import useLocalStorage from '../../shared/uselocalstorage'
 
 function App() {
 
-  const [data, setData] = useState(testdata)
-
-  const [typelist, setTypelist] = useState(["Jääkaappi", "Pakastin", "Uuni", "Pesukone", "Mikroaaltouuni"])
+  const [data, setData] = useLocalStorage('varastoapulainen-data',[])
+  const [typelist, setTypelist] = useLocalStorage('varastoapulainen-typelist',[])
 
   const handleItemDelete = (id) => {
     let copy = data.slice()
