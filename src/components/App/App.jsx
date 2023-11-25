@@ -2,23 +2,25 @@ import AppRouter from '../AppRouter'
 import { useState } from 'react'
 import useLocalStorage from '../../shared/uselocalstorage'
 import firebase from './firebase.js'
-import { collection, deleteDoc, doc, getFirestore, onSnapshot, setDoc  } from 'firebase/firestore'
+import { collection, deleteDoc, doc, getFirestore, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore'
 import { useEffect } from 'react'
 
 function App() {
 
   const [data, setData] = useState([])
-  const [typelist, setTypelist] = useLocalStorage('varastoapulainen-typelist',[])
+  const [typelist, setTypelist] = useLocalStorage('varastoapulainen-typelist', [])
   const firestore = getFirestore(firebase)
 
-  useEffect( () => {
-    const unsubscribe = onSnapshot(collection(firestore,'item'), snapshot => {
-      const newData = []
-      snapshot.forEach( doc => {
-        newData.push({ ...doc.data(), id: doc.id })
+  useEffect(() => {
+    const unsubscribe = onSnapshot(query(collection(firestore, 'item'),
+      orderBy('type', 'asc')),
+      snapshot => {
+        const newData = []
+        snapshot.forEach(doc => {
+          newData.push({ ...doc.data(), id: doc.id })
+        })
+        setData(newData)
       })
-      setData(newData)    
-    })
     return unsubscribe
   }, [])
 
@@ -42,7 +44,7 @@ function App() {
       <AppRouter data={data}
         typelist={typelist}
         onItemSubmit={handleItemSubmit}
-        onItemDelete={handleItemDelete} 
+        onItemDelete={handleItemDelete}
         onTypeSubmit={handleTypeSubmit} />
     </>
   )
