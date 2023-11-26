@@ -25,16 +25,33 @@
 }
 
 .settings_form {
-    display: flex;
-    margin-top: 0.5rem;
-  }
-  
-  .settings_form input {
-    flex: 1 1 auto;
-    padding: 0.5rem;
-    border: 1px solid $color-neutral;
-    border-radius: 0.3rem;
-    font-size: 1em;
-    outline: none;
-  }
-  
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.settings_form input {
+  flex: 1 1 auto;
+  padding: 0.5rem;
+  border: 1px solid $color-neutral;
+  border-radius: 0.3rem;
+  font-size: 1em;
+  outline: none;
+}
+
+.settings_profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings_user {
+  display: flex;
+  align-items: center;
+}
+
+.settings_user img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: 1rem;
+}
