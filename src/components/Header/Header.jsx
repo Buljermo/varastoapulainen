@@ -4,7 +4,8 @@ function Header() {
 
     return (
         <div className={styles.header}>
-            <img src={logo} alt="Logo" className={styles.smallLogo} />
+            <a href="https://kodinkoneet.net/" target="_blank" rel="noopener noreferrer">
+            <img src={logo} alt="Logo" className={styles.smallLogo} /></a>
             <div className={styles.text}>
                 Varastoapulainen
             </div>
