@@ -1,8 +1,8 @@
 # Varastoapulainen
 
-Reaktiosovellus auttaa sinua työskentelemään varastossa. 
-Sovelluksessa voit tallentaa varastossa olevia tuotteita, 
-muokata niitä ja poistaa luettelosta. 
+React-projekti, joka auttaa sinua varaston työssä. 
+Sovelluksessa voit vaikka luokittella varastossa olevia tuotteita, 
+muokata niiden tietoja ja poistaa luettelosta. 
 Saatavilla on myös kaavio tuotteiden määrästä luokittain.
 
 ## Kuvaruutukopiot
