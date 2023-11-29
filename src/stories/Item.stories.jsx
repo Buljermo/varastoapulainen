@@ -15,7 +15,7 @@ export const Default = {
     args: {
         data: {
             id: "1",
-            model: "Sasung RS27mT5200SR",
+            model: "Sasung RS27T5200SR",
             type: "Jääkaappi",
             note: "Tilava, mutta joskus kompressorin ääni voi olla voimakas."
         }
